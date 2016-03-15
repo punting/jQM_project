@@ -1,0 +1,46 @@
+<div data-role="page" id="order" ng-controller="orderCon">
+    <div data-role="header" data-position="fixed">
+        <a data-rel="back">开饭啦</a>
+        <h5>详情</h5>
+        <a href="#" data-icon="bars" data-iconpos="notext" data-iconpos="right">开饭啦</a>
+    </div>
+    <div class="ui-content">
+        <div class="ui-body ui-body-a ui-corner-all">
+            <form ng-show="xian">
+                <label for="user">联系人..</label>
+                <input type="text" id="user" placeholder="联系人..." ng-model="order.name">
+                <label>性别：</label>
+                <div data-role="controlgroup" data-type="horizontal">
+                    <label>
+                        <input type="radio" name="sex" checked value='1' ng-model="order.sex"/>男
+                    </label>
+                    <label>
+                        <input type="radio" name="sex" value='2'  ng-model="order.sex"/>女
+                    </label>
+                </div>
+                <label for="phone">联系电话...</label>
+                <input type="text" id="phone" ng-model="order.phone" placeholder="联系电话...">
+                <label for="addr">送餐地址...</label>
+                <textarea id="addr" type="text" ng-model="order.addr" placeholder="送餐地址..."></textarea>
+                <button class="bg" ng-click="subm()">我要下单！</button>
+            </form>
+            <div ng-hide="xian">
+                <h4>下单成功!</h4>
+                <p>您的订单编号为：{{oid[0].oid}}。您可以在用户中心<a href="myorder.html">查看订单状态</a>。</p>
+            </div>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-b">
+            <div class="ui-block-a">
+                <a href="#" data-role="button" data-icon="home" data-iconpos="notext">主页</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#" data-role="button" data-icon="user" data-iconpos="notext">用户中心</a>
+            </div>
+            <div class="ui-block-c">
+                <a href="#" data-role="button" data-icon="bullets" data-iconpos="notext">菜单</a>
+            </div>
+        </div>
+    </div>
+</div>

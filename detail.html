@@ -1,0 +1,45 @@
+<div data-role="page" id="detail" ng-controller="detailCon">
+    <div data-role="header" data-position="fixed">
+        <a data-rel="back">开饭啦</a>
+        <h5>详情</h5>
+        <a href="#" data-icon="bars" data-iconpos="notext" data-iconpos="right">开饭啦</a>
+    </div>
+    <div class="ui-content" data-theme="a">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">详情</a></li>
+            </ul>
+        </div>
+        <div class="ui-body ui-body-a ui-corner-all">
+            <h4 class="ui-bar  ui-corner-all">{{dish[0].name}}</h4>
+            <hr>
+            <img ng-src="img/{{dish[0].img_lg}}" class="image-responsive" alt="">
+
+            <p>主要原料：{{dish[0].material}}</p>
+
+            <p>{{dish[0].detail}} </p>
+            <h4>{{dish[0].price | currency : '￥'}}</h4>
+            <div class="ui-grid-d" >
+                <div class="ui-block-a"></div>
+                <div class="ui-block-b"></div>
+                <div class="ui-block-c"></div>
+                <div class="ui-block-d"><a href="order.html"  data-role="button" class="bg float-right" data-inline="true">我要订餐</a></div>
+                <div class="ui-block-e"><a href="#" data-role="button" class="bg" data-inline="true" data-rel="back">我再看看</a></div>
+            </div>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-b">
+            <div class="ui-block-a">
+                <a href="#" data-role="button" data-icon="home" data-iconpos="notext">主页</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#" data-role="button" data-icon="user" data-iconpos="notext">用户中心</a>
+            </div>
+            <div class="ui-block-c">
+                <a href="#" data-role="button" data-icon="bullets" data-iconpos="notext">菜单</a>
+            </div>
+        </div>
+    </div>
+</div>

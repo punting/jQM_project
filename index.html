@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myM1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>开饭啦！</title>
+    <link rel="stylesheet" href="jQM/jquery.mobile-1.4.5.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <script src="jQM/jquery-1.11.3.min.js"></script>
+    <script src="jQM/jquery.mobile-1.4.5.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-touch.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-controller="parentCtrl">
+  <div data-role="page" id="index">
+         <div class="ui-content" ng-click="jump('main.html')">
+          <h1 class="logo text-center">开饭啦</h1>
+        <img class="width-full" src="img/kid-foods.jpg" alt=""/>
+         </div>
+  </div>
+</body>
+</html>

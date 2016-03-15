@@ -1,0 +1,49 @@
+<div data-role="page" id="main" ng-controller="mainCon">
+     <div data-role="header" data-position="fixed">
+          <a data-rel="back">开饭啦</a>
+          <h5>主页</h5>
+          <a href="#" data-icon="bars" data-iconpos="notext" data-iconpos="right">开饭啦</a>
+     </div>
+     <div class="ui-content">
+          <input type="search" placeholder="搜索菜名.." class="search" ng-model="kw"/>
+          <ul data-role="listview" data-inset="true">
+               <li ng-repeat="dish in dishList">
+                    <a href="#" ng-click="showDetail(dish.did)">
+                         <img ng-click="showBig(dish.did)" ng-src="img/{{dish.img_sm}}" alt="" class="ui-li-has-icon ui-corner-none">
+                         <h3>{{dish.name}}</h3>
+                         <p>主要食料：{{dish.material}}</p>
+                         <hr>
+                         <h5>￥{{dish.price | currency : '￥'}}</h5>
+                    </a>
+               </li>
+          </ul>
+          <button  data-role="button" class="bg" ng-click="loadMore()" ng-show="hasMore">加载更多</button>
+          <!--下方的警告框-->
+          <div ng-hide="hasMore" >
+               已经没有更多数据可供加载了!
+          </div>
+     </div>
+     <br><br><br>
+     <div data-role="footer" data-position="fixed">
+          <div class="ui-grid-b">
+               <div class="ui-block-a">
+                    <a href="#" data-role="button" data-icon="home" data-iconpos="notext">主页</a>
+               </div>
+               <div class="ui-block-b">
+                    <a href="#" data-role="button" data-icon="user" data-iconpos="notext">用户中心</a>
+               </div>
+               <div class="ui-block-c">
+                    <a href="#" data-role="button" data-icon="bullets" data-iconpos="notext">菜单</a>
+               </div>
+     </div>
+     </div>
+     <div>
+          <div class="full-screen hide"></div>
+          <div id="p{{di.did}}" ng-repeat="di in dishList" class="bg-img hide" ng-click="showBack()">
+               <img ng-src="img/{{di.img_lg}}" >
+          </div>
+     </div>
+     <script>
+          $('.bg-img').css('line-height',$(window).height()+'px');
+     </script>
+</div>

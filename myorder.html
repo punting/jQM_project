@@ -1,0 +1,41 @@
+<div data-role="page" id="myorder" ng-controller="myorder">
+    <div data-role="header" data-position="fixed">
+        <a data-rel="back">开饭啦</a>
+        <h5>详情</h5>
+        <a href="#" data-icon="bars" data-iconpos="notext" data-iconpos="right">开饭啦</a>
+    </div>
+    <div class="ui-content">
+        <h2 class="head">我的订单</h2>
+      <table data-role="table" data-mode="columntoggle" class=" ui-shadow ui-responsive table-stripe">
+       <thead>
+        <tr>
+            <th data-position="2">编号</th>
+            <th data-priority="2">菜品</th>
+            <th data-position="3">下单时间</th>
+            <th data-priority="1">联系人</th>
+        </tr>
+       <tbody>
+       <tr>
+           <td>{{dish[0].oid}}</td>
+           <td><img vertical-valign="middle" ng-src="img/{{dish[0].img_sm}}" alt="" id="img"><span id="span">{{dish[0].name}}</span></td>
+           <td>{{dish[0].order_time | date : 'yyyy-MM-dd HH:mm:ss'}}</td>
+           <td>{{dish[0].user_name}}</td>
+       </tr>
+      </tbody>
+       </thead>
+      </table>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-b">
+            <div class="ui-block-a">
+                <a href="#" data-role="button" data-icon="home" data-iconpos="notext">主页</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="#" data-role="button" data-icon="user" data-iconpos="notext">用户中心</a>
+            </div>
+            <div class="ui-block-c">
+                <a href="#" data-role="button" data-icon="bullets" data-iconpos="notext">菜单</a>
+            </div>
+        </div>
+    </div>
+</div>
